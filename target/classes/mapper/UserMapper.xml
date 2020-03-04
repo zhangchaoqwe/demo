@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDao">
+    <select id="user" resultType="com.example.demo.entity.User">
+     select * from User where username=#{name} and `password`=#{pass}
+    </select>
+    <insert id="addcommodity">
+     insert into consumption(userid,commodityid,commoditynum)
+      values(#{userid},#{commodityid},#{commoditynum});
+    </insert>
+    <update id="updatenum">
+        update commodity set commoditynum=#{num} where id=#{id}
+    </update>
+    <select id="commodity" resultType="com.example.demo.entity.Commodity">
+        select * from commodity where id=#{id}
+    </select>
+</mapper>
